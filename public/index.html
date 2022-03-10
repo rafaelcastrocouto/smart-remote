@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width"/>
+
 <title>Smart Remote</title>
 
 <style>
@@ -7,25 +9,22 @@
   }
   section {
     border: 1px solid #ddd;
-    padding: 10px;
-  }
-  h2 {
-    text-align: center;
-    font-family: sans-serif;
+    padding: 8px;
+    background: #ddd;
   }
   div {
     display: flex;
   }
   .sep {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
   .right {
     justify-content: right;
   }
   button {
     border-radius: 5px;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 22px;
+    padding: 16px;
     margin: 2px;
     border: 1px solid #666;
   }
@@ -38,7 +37,6 @@
   <div class="sep right">
     <button id="power">⛔</button>
   </div>
-  <h2>Smart Remote</h2>
   <div>
     <button id="up">⬆️</button>
   </div>
@@ -47,11 +45,18 @@
     <button id="enter">✔️</button>
     <button id="right">➡️</button>
   </div>
-  <div>
+  <div class="sep">
     <button id="down">⬇️</button>
   </div>
   <div class="sep">
     <button id="return">↩️</button>
+    <button id="home">🏠</button>
+    <button id="menu">⚙️</button>
+  </div>
+  <div class="sep">
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+    <button id="stop">⏹️</button>
   </div>
   <div>
     <button id="mute">🔇</button>
