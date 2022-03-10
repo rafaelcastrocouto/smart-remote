@@ -1,0 +1,33 @@
+
+{
+  "name": "mime",
+  "repository": {
+    "url": "https://github.com/rafaelcastrocouto/smart-remote",
+    "type": "git"
+  },
+  "version": "0.0.1",
+  "author": {
+    "name": "Rafael",
+    "url": "http://github.com/rafaelcastrocouto",
+    "email": "rafaelcastrocouto@gmail.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "description": "Samsung SmarTV nodejs remote control",
+  "dependencies": {
+    "express": "^4.17.3",
+    "samsung-tv-control": "^1.12.3",
+    "ws": "^8.5.0"
+  }
+  "devDependencies": {},
+  "keywords": [
+    "TV",
+    "remote",
+    "control",
+    "Samsung",
+    "smart",
+    "smartv"
+  ],
+  "main": "index.js"
+}

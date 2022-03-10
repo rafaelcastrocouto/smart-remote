@@ -1,0 +1,89 @@
+<title>Smart Remote</title>
+
+<style>
+  body {
+    display: grid;
+    place-content: center;
+  }
+  section {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  h2 {
+    text-align: center;
+    font-family: sans-serif;
+  }
+  div {
+    display: flex;
+  }
+  .sep {
+    margin-bottom: 20px;
+  }
+  .right {
+    justify-content: right;
+  }
+  button {
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    margin: 2px;
+    border: 1px solid #666;
+  }
+  #up, #down {
+    margin: 0 auto;
+  }
+</style>
+
+<section>
+  <div class="sep right">
+    <button id="power">⛔</button>
+  </div>
+  <h2>Smart Remote</h2>
+  <div>
+    <button id="up">⬆️</button>
+  </div>
+  <div>
+    <button id="left">⬅️</button>
+    <button id="enter">✔️</button>
+    <button id="right">➡️</button>
+  </div>
+  <div>
+    <button id="down">⬇️</button>
+  </div>
+  <div class="sep">
+    <button id="return">↩️</button>
+  </div>
+  <div>
+    <button id="mute">🔇</button>
+    <button id="voldown">🔉</button>
+    <button id="volup">🔊</button>
+  </div>
+</section>
+
+<script>
+(async function() {
+
+  const ws = await connectToServer(); 
+
+  const buttons = document.getElementsByTagName('button');
+
+  for (let button of buttons) {
+    button.addEventListener('click', (evt)=> {
+      ws.send(evt.target.id);
+    });
+  }
+
+  async function connectToServer() {
+    const ws = new WebSocket('ws://192.168.1.4:8082/ws');
+    return new Promise((resolve,reject)=>{
+      const timer = setInterval(()=>{
+        if (ws.readyState === 1) {
+          clearInterval(timer);
+          resolve(ws);
+        }
+      }, 100);
+    });
+  }
+
+})();
+</script>
