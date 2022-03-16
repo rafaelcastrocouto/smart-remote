@@ -14,6 +14,7 @@
   }
   div {
     display: flex;
+    margin-bottom: 2px;
   }
   .sep {
     margin-bottom: 8px;
@@ -30,6 +31,9 @@
   }
   #up, #down {
     margin: 0 auto;
+  }
+  #power {
+    border-radius: 50%;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -80,6 +84,7 @@
 </section>
 
 <script>
+
 (async function() {
 
   const ws = await connectToServer(); 
